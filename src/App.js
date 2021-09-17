@@ -47,7 +47,7 @@ function Header() {
 
 function Chatroom() {
 	const mref = firestore.collection('messages');
-	const query = mref.orderBy('createdAt').limit(25);
+	const query = mref.orderBy('createdAt');
 	const [messages] = useCollectionData(query, { idField: 'id' });
 	const [newMsg, setNewMsg] = React.useState('');
 	const [user] = useAuthState(auth);
