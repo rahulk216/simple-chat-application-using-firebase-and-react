@@ -94,7 +94,11 @@ function Chat(props) {
 	console.log(props);
 	return (
 		<div class={`message ${messageclass}`}>
-			<img className='userimg' src={props.user._delegate.photoURL} />
+			<img
+				className='userimg'
+				src={props.user._delegate.photoURL}
+				alt='img'
+			/>
 			<p className='usertext'>{props.message}</p>
 		</div>
 	);
@@ -106,7 +110,9 @@ function Signin() {
 	};
 	return (
 		<div className='signin'>
-			<button className='btn'onClick={signInWithGoogle}>Sign-in</button>
+			<button className='btn' onClick={signInWithGoogle}>
+				Sign-in
+			</button>
 		</div>
 	);
 }
