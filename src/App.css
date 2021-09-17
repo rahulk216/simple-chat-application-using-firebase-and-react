@@ -1,38 +1,94 @@
-.App {
-  text-align: center;
+.header {
+	height: 4rem;
+	background-color: #075e54;
+	display: flex;
+	align-items: center;
+}
+.signout {
+	padding: 0.5rem;
+	font-size: 1rem;
+	margin-left: 1rem;
+	border: none;
+	background-color: transparent;
+	color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*Chatroom*/
+
+.chatbox {
+	position: fixed;
+	height: 5rem;
+	width: 100%;
+	top: 90%;
+	background-color: #075e54;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+.chatroom {
+	height: 80vh;
+	overflow: scroll;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+	background: url('./bg-lite.png');
+	background-color: #e5ddd5;
 }
-
-.App-link {
-  color: #61dafb;
+.signin {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.message {
+	display: flex;
+	align-self: flex-end;
+	align-items: center;
+	margin: 0.8rem 0;
+}
+.messageright {
+	flex-direction: row-reverse;
+}
+.userimg {
+	border-radius: 50%;
+	height: 2rem;
+}
+.usertext {
+	border: 1px solid grey;
+	padding: 0.7rem;
+	border-radius: 30px;
+	background-color: #fff;
+	margin: 10px;
+}
+.userinput {
+	padding: 0.6rem;
+	margin-right: 0.6rem;
+	margin-bottom: 1rem;
+	border: none;
+	border-radius: 30px;
+}
+.send {
+	border-radius: 50%;
+	padding: 0.7rem;
+	margin-bottom: 1rem;
+	border: 1px solid white;
+	background-color: transparent;
+}
+i {
+	font-size: 1.2rem;
+	color: white;
+}
+.heading {
+	justify-content: center;
+	margin-left: 1rem;
+	color: #fff;
+	text-transform: uppercase;
+}
+.btn {
+	padding: 1rem;
+	background-color: #075e54;
+	color: #fff;
+	font-size: 1rem;
+	border: none;
+	border-radius: 30px;
 }
