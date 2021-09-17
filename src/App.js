@@ -57,25 +57,27 @@ function Chatroom() {
 			const mg = {
 				text: newMsg,
 				createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+				uid: user._delegate.uid,
+				photoURL: user._delegate.photoURL,
 			};
+			setNewMsg(null);
 			await mref.add(mg);
+			
 			scrollDown.current.scrollIntoView({ behavior: 'smooth' });
-			setNewMsg('');
 		}
 	};
 	return (
 		<div className='chatroom'>
-			<div>
+			<div className='textbox'>
 				{messages &&
-					messages.map((msg) => (
-						<Chat key={msg.id} message={msg.text} user={user} />
-					))}
-				<div ref={scrollDown}></div>
+					messages.map((msg) => <Chat key={msg.id} message={msg} />)}
+				<div ref={scrollDown} style={{ height: '2rem' }}></div>
 			</div>
 			<div className='chatbox'>
 				<input
 					className='userinput'
 					type='text'
+					placeholder='Type something'
 					onChange={(e) => setNewMsg(e.target.value)}
 				/>
 				<button className='send' onClick={sendMsg}>
@@ -88,18 +90,14 @@ function Chatroom() {
 function Chat(props) {
 	const [user] = useAuthState(auth);
 	const messageclass =
-		props.user._delegate.uid === user._delegate.uid
-			? 'messageright'
-			: 'messageleft';
+		props.message.uid === user._delegate.uid ? 'messageright' : 'messageleft';
+	const colorchange =
+		props.message.uid === user._delegate.uid ? 'colorright' : 'colorleft';
 	console.log(props);
 	return (
 		<div class={`message ${messageclass}`}>
-			<img
-				className='userimg'
-				src={props.user._delegate.photoURL}
-				alt='img'
-			/>
-			<p className='usertext'>{props.message}</p>
+			<img className='userimg' src={props.message.photoURL} alt='img' />
+			<p className={`usertext ${colorchange}`}>{props.message.text}</p>
 		</div>
 	);
 }

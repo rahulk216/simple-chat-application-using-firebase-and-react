@@ -29,9 +29,8 @@
 .chatroom {
 	height: 80vh;
 	overflow: scroll;
-
 	background: url('./bg-lite.png');
-	background-color: #e5ddd5;
+	background-color: #e5ddd5e1;
 }
 .signin {
 	height: 100vh;
@@ -49,28 +48,36 @@
 .messageright {
 	flex-direction: row-reverse;
 }
+.colorright {
+	background-color: #dcf8c6;
+}
+.colorleft {
+	background-color: #fff;
+}
 .userimg {
 	border-radius: 50%;
 	height: 2rem;
 }
 .usertext {
-	border: 1px solid grey;
 	padding: 0.7rem;
 	border-radius: 30px;
-	background-color: #fff;
 	margin: 10px;
+	font-size: 0.9rem;
 }
-.userinput {
+input,
+input:focus {
 	padding: 0.6rem;
 	margin-right: 0.6rem;
-	margin-bottom: 1rem;
+	margin-bottom: 1.3rem;
 	border: none;
+	width: 60%;
+	outline: none !important;
 	border-radius: 30px;
 }
 .send {
 	border-radius: 50%;
 	padding: 0.7rem;
-	margin-bottom: 1rem;
+	margin-bottom: 1.3rem;
 	border: 1px solid white;
 	background-color: transparent;
 }
@@ -91,4 +98,7 @@ i {
 	font-size: 1rem;
 	border: none;
 	border-radius: 30px;
+}
+.textbox {
+	margin: 0 0.6rem;
 }
